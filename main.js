@@ -87,11 +87,11 @@ function bench() {
     let ration = 100
     let data = genData(length, ration, iterations)
     let max = undefined
-    let t0 = new Date().getTime();
+    let t0 = new Date().getTime()
     for(let i in data) {
         let pair = data[i]
         let result = compare(pair[0], pair[1])
-        if(!max || result.length > max.length) {
+        if(max == undefined || result.length > max.length) {
             max = result
         }
     }
