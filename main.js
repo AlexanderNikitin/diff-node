@@ -88,18 +88,17 @@ function bench() {
     let data = genData(length, ration, iterations)
     let max = undefined
     let t0 = new Date().getTime();
-    let result = undefined
     for(let i in data) {
         let pair = data[i]
-        result = compare(pair[0], pair[1])
+        let result = compare(pair[0], pair[1])
         if(!max || result.length > max.length) {
             max = result
         }
     }
     let t = new Date().getTime()
     console.log('time: ' + (t - t0))
-    console.log(result.length)
-    console.log(result)
+    console.log(max.length)
+    console.log(max)
 }
 
 bench()
